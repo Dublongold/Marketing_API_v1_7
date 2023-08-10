@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Marketing_API_v1_7</string>
+    <string name="pre_match">Pre-match</string>
+    <string name="news">News</string>
+    <string name="the_last">The last</string>
+    <string name="live">Live</string>
+    <string name="settings">Settings</string>
+    <string name="football">Football</string>
+    <string name="tennis">Tennis</string>
+    <string name="basketball">Basketball</string>
+    <string name="hockey">Hockey</string>
+    <string name="match_date">"%s, "</string>
+    <string name="opponent2_image_description">Opponent 2</string>
+    <string name="opponent1_image_description">Opponent 1</string>
+    <string name="annoying_banner_description">Annoying banner</string>
+    <string name="full_score">%d:%d</string>
+    <string name="football_news"><u>Football news:</u></string>
+</resources>

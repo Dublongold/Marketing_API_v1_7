@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/preMatchFragment">
+
+    <fragment
+        android:id="@+id/preMatchFragment"
+        android:name="com.example.marketing_api_v1_7.views.PreMatchFragment"
+        android:label="PreMatchFragment" />
+
+    <dialog
+        android:id="@+id/annoyingBannerFragment"
+        android:name="com.example.marketing_api_v1_7.views.AnnoyingBannerFragment"
+        android:label="AnnoyingBannerFragment"/>
+    <fragment
+        android:id="@+id/liveFragment"
+        android:name="com.example.marketing_api_v1_7.views.LiveFragment"
+        android:label="LiveFragment" />
+    <fragment
+        android:id="@+id/theLastFragment"
+        android:name="com.example.marketing_api_v1_7.views.TheLastFragment"
+        android:label="TheLastFragment" />
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="com.example.marketing_api_v1_7.views.NewsFragment"
+        android:label="NewsFragment" />
+
+
+    <action
+        android:id="@+id/goToAnnoyingBannerDestination"
+        app:destination="@id/annoyingBannerFragment"/>
+    <action
+        android:id="@+id/goToLivePage"
+        app:destination="@id/liveFragment"/>
+    <action
+        android:id="@+id/goToPreMatchPage"
+        app:destination="@id/preMatchFragment"/>
+    <action
+        android:id="@+id/goToTheLastPage"
+        app:destination="@id/theLastFragment"/>
+    <action
+        android:id="@+id/goToNewsPage"
+        app:destination="@id/newsFragment"/>
+</navigation>

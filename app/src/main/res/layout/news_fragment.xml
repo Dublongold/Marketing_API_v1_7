@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/app_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:contentDescription="@string/settings"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/mvp_image" />
+
+        <TextView
+            android:id="@+id/titleOfPage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/news"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/bottomBannerImage"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/navigationButtonsContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/mvp_image" />
+
+    <ImageView
+        android:id="@+id/bottomBannerImage2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:srcCompat="@drawable/mvp_image" />
+
+
+    <TextView
+        android:id="@+id/footballNewsText"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginStart="30dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:text="@string/football_news"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bottomBannerImage2" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/matchList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/bottomBannerImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/footballNewsText" />
+
+    <LinearLayout
+        android:id="@+id/navigationButtonsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:id="@+id/goToLiveContainer"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:foreground="?android:selectableItemBackground"
+            android:orientation="vertical"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/goToLiveImage"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:foreground="@color/inactive_page_button"
+                android:src="@drawable/mvp_image">
+            </ImageView>
+            <TextView
+                android:id="@+id/goToLiveText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:foreground="@color/inactive_page_button"
+                android:text="@string/live"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/goToPreMatchContainer"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:foreground="?android:selectableItemBackground"
+            android:orientation="vertical"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+            <ImageView
+                android:id="@+id/goToPreMatchImage"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:foreground="@color/inactive_page_button"
+                android:src="@drawable/mvp_image">
+            </ImageView>
+            <TextView
+                android:id="@+id/goToPreMatchText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:foreground="@color/inactive_page_button"
+                android:text="@string/pre_match"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/goToTheLastContainer"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:foreground="?android:selectableItemBackground"
+            android:orientation="vertical"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+            <ImageView
+                android:id="@+id/goToTheLastImage"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:foreground="@color/inactive_page_button"
+                android:src="@drawable/mvp_image">
+            </ImageView>
+            <TextView
+                android:id="@+id/goToTheLastText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:foreground="@color/inactive_page_button"
+                android:text="@string/the_last"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/goToNewsContainer"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:foreground="?android:selectableItemBackground"
+            android:orientation="vertical"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+            <ImageView
+                android:id="@+id/goToNewsImage"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/mvp_image">
+            </ImageView>
+            <TextView
+                android:id="@+id/goToNewsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/news"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/loadingData"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/bottomBannerImage"
+        app:layout_constraintEnd_toEndOf="@+id/matchList"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bottomBannerImage2"
+        tools:visibility="visible" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
