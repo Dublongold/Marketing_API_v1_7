@@ -36,13 +36,7 @@ abstract class MatchesViewModel<T>: ViewModel() {
             _matchesLoaded.update { true }
         }
     }
-
-    fun loadMoreData() {
-        if(!_matchesLoaded.value) return
-        viewModelScope.launch {
-            _matchesLoaded.update { false }
-            repository.loadNewMatches()
-            _matchesLoaded.update { true }
-        }
+    protected fun updateMarchesLoaded(value: Boolean) {
+        _matchesLoaded.update { value }
     }
 }

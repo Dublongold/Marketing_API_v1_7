@@ -24,7 +24,7 @@ class PreMatchFragment: MatchesFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         val adapter = PreMatchListAdapter()
-        view.findViewById<RecyclerView>(R.id.matchList).apply {
+        view.findViewById<RecyclerView>(R.id.newsList).apply {
             this.adapter = adapter
         }
 

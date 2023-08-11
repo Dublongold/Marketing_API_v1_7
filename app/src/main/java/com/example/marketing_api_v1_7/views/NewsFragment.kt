@@ -1,24 +1,22 @@
 package com.example.marketing_api_v1_7.views
 
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.LinearLayout
-import android.widget.TextView
-import androidx.core.graphics.drawable.toDrawable
+import android.widget.ProgressBar
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marketing_api_v1_7.R
-import com.example.marketing_api_v1_7.forRecyclerView.adapters.PreMatchListAdapter
+import com.example.marketing_api_v1_7.forRecyclerView.adapters.NewsListAdapter
 import com.example.marketing_api_v1_7.viewModels.NewsViewModel
-import com.example.marketing_api_v1_7.viewModels.PreMatchViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.koin.android.ext.android.inject
@@ -36,6 +34,45 @@ class NewsFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setBottomButtonsListeners()
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.newsLoaded.collect {
+                    view.findViewById<ProgressBar>(R.id.loadingData).visibility =
+                        if(it) View.GONE else View.VISIBLE
+                }
+            }
+        }
+
+        val adapter = NewsListAdapter()
+        adapter.readNewsCallback = {
+            findNavController().navigate(
+                R.id.goToReadNewsPage,
+                bundleOf(
+                    "newsText" to it.text,
+                    "newsImage" to it.image,
+                    )
+            )
+        }
+
+        view.findViewById<RecyclerView>(R.id.newsList).apply {
+            this.adapter = adapter
+            layoutManager = GridLayoutManager( context, 2).also {
+                it.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
+                    override fun getSpanSize(position: Int) = if (position < 3) 2 else 1
+                }
+            }
+        }
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.news.collect {
+                    adapter.submitList(it)
+                }
+            }
+        }
+
+        viewModel.loadNews()
 
         viewLifecycleOwner.lifecycleScope.launch {
             delay(2000)
@@ -62,9 +99,6 @@ class NewsFragment: Fragment() {
                     popBackStack()
                     navigate(R.id.goToPreMatchPage)
                 }
-            }
-            view.findViewById<LinearLayout>(R.id.goToNewsContainer).setOnClickListener {
-                viewModel.testFun()
             }
         }
     }

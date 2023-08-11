@@ -13,10 +13,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marketing_api_v1_7.R
-import com.example.marketing_api_v1_7.forRecyclerView.adapters.PreMatchListAdapter
 import com.example.marketing_api_v1_7.forRecyclerView.adapters.TheLastListAdapter
-import com.example.marketing_api_v1_7.viewModels.MatchesViewModel
-import com.example.marketing_api_v1_7.viewModels.PreMatchViewModel
 import com.example.marketing_api_v1_7.viewModels.TheLastViewModel
 import kotlinx.coroutines.launch
 import org.koin.android.ext.android.inject
@@ -28,7 +25,7 @@ class TheLastFragment: MatchesFragment() {
         val adapter = TheLastListAdapter().apply {
             loadMoreCallback = { viewModel.loadMoreData() }
         }
-        view.findViewById<RecyclerView>(R.id.matchList).apply {
+        view.findViewById<RecyclerView>(R.id.newsList).apply {
             this.adapter = adapter
         }
 

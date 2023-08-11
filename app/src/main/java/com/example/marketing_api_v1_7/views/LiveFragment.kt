@@ -23,7 +23,7 @@ class LiveFragment: MatchesFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val adapter = LiveListAdapter()
-        view.findViewById<RecyclerView>(R.id.matchList).apply {
+        view.findViewById<RecyclerView>(R.id.newsList).apply {
             this.adapter = adapter
         }
 

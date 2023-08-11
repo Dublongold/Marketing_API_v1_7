@@ -24,7 +24,23 @@
     <fragment
         android:id="@+id/newsFragment"
         android:name="com.example.marketing_api_v1_7.views.NewsFragment"
-        android:label="NewsFragment" />
+        android:label="NewsFragment" >
+        <action
+            android:id="@+id/goToReadNewsPage"
+            app:destination="@id/readNewsFragment">
+        </action>
+    </fragment>
+    <dialog
+        android:id="@+id/readNewsFragment"
+        android:name="com.example.marketing_api_v1_7.views.ReadNewsFragment"
+        android:label="ReadNewsFragment">
+        <argument
+            android:name="newsText"
+            app:argType="string" />
+        <argument
+            android:name="newsImage"
+            app:argType="string" />
+    </dialog>
 
 
     <action
@@ -42,4 +58,5 @@
     <action
         android:id="@+id/goToNewsPage"
         app:destination="@id/newsFragment"/>
+
 </navigation>

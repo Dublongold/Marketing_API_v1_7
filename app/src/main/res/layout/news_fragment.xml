@@ -69,10 +69,9 @@
         app:layout_constraintTop_toBottomOf="@+id/bottomBannerImage2" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/matchList"
+        android:id="@+id/newsList"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toTopOf="@+id/bottomBannerImage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -196,7 +195,7 @@
         android:layout_height="wrap_content"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/bottomBannerImage"
-        app:layout_constraintEnd_toEndOf="@+id/matchList"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bottomBannerImage2"
         tools:visibility="visible" />

@@ -1,5 +1,5 @@
-<resources>
-    <string name="app_name">Marketing_API_v1_7</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" tools:ignore="Typos">Marketing_API_v1_7</string>
     <string name="pre_match">Pre-match</string>
     <string name="news">News</string>
     <string name="the_last">The last</string>
@@ -15,4 +15,9 @@
     <string name="annoying_banner_description">Annoying banner</string>
     <string name="full_score">%d:%d</string>
     <string name="football_news"><u>Football news:</u></string>
+    <string name="news_title">News</string>
+    <string name="text_with_ellipsis">%s…</string>
+    <string name="news_preview_image">News preview image</string>
+    <string name="go_back_to_news_descriptions">Go back to news</string>
+    <string name="news_image_description">News image</string>
 </resources>

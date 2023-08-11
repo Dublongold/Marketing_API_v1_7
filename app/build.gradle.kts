@@ -64,4 +64,6 @@ dependencies {
     implementation("io.insert-koin:koin-android:$koinAndroidVersion")
     // Picasso
     implementation("com.squareup.picasso:picasso:2.71828")
+    // Jsoup
+    implementation("org.jsoup:jsoup:1.16.1")
 }

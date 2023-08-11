@@ -47,8 +47,4 @@ class PreMatchRepository: MatchRepository<PreMatchSportsEvents> {
         catch(_: UnknownHostException) {}
         catch(_: SocketTimeoutException) {}
     }
-
-    override suspend fun loadNewMatches() {
-        TODO("Not yet implemented")
-    }
 }

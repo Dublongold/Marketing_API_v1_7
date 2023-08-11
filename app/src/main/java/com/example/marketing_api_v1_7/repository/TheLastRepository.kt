@@ -71,7 +71,7 @@ class TheLastRepository: MatchRepository<TheLastSportsEvents> {
         catch(_: SocketTimeoutException) {}
     }
 
-    override suspend fun loadNewMatches() {
+    suspend fun loadNewMatches() {
         tournamentForLoadId?.let {tournamentForLoadId ->
             if (tournaments.isNotEmpty()) {
                 val firstTournament =

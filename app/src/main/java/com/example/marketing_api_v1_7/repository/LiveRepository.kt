@@ -47,8 +47,4 @@ class LiveRepository: MatchRepository<LiveSportsEvents> {
         catch(_: UnknownHostException) {}
         catch(_: SocketTimeoutException) {}
     }
-
-    override suspend fun loadNewMatches() {
-        TODO("Not yet implemented")
-    }
 }

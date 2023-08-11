@@ -114,7 +114,7 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/matchList"
+        android:id="@+id/newsList"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -244,7 +244,7 @@
         android:visibility="invisible"
         tools:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/bottomBannerImage"
-        app:layout_constraintEnd_toEndOf="@+id/matchList"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
